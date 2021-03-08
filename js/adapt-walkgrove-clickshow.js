@@ -6,7 +6,20 @@ define([
 
   var ClickShowView = ComponentView.extend({
 
+    events: {
+      'click .js-clickshow-item': 'onShow'
+    },
+    
     preRender: function() {
+
+      Handlebars.registerHelper('if_eq', function(a, b, opts) {
+        if (a == b) {
+            return opts.fn(this);
+        } else {
+            return opts.inverse(this);
+        }
+      });
+
       this.checkIfResetOnRevisit();
     },
 
@@ -21,7 +34,32 @@ define([
       if (isResetOnRevisit) {
         this.model.reset(isResetOnRevisit);
       }
+      
+    },
+
+    onShow: function(event) {
+      event.preventDefault();
+
+      const itemIndex = $(event.currentTarget).parent().data('index');
+      this.setItemVisited(itemIndex);
+
+    },
+
+    setItemVisited: function(index) {
+      this.$('.clickshow__widget').eq(index).addClass('is-visited');
+      this.checkAllItemsCompleted();
+    },
+
+    checkAllItemsCompleted: function() {
+      var complete = false;
+      if(this.$('.clickshow__widget').length === this.$('.is-visited').length){
+        complete = true;
+      }
+      if(complete) {
+        this.setCompletionStatus();
+      }
     }
+
   },
   {
     template: 'clickshow'

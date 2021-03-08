@@ -29,6 +29,66 @@
       "validators": [],
       "help": "This is the instruction text",
       "translatable": true
+    },
+    "_layoutType": {
+      "type": "string",
+      "required": true,
+      "default": "image",
+      "inputType": "Text",
+      "validators": [],
+      "help": "This is the layout setting - usingf images or text",
+      "translatable": false
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Items",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "left": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "left element",
+            "inputType": "Text",
+            "validators": [],
+            "help": "",
+            "translatable": true
+          },
+          "leftAlt": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "left element alt information",
+            "inputType": "Text",
+            "validators": [],
+            "help": "",
+            "translatable": true
+          },
+           "right": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "right element",
+            "inputType": "Text",
+            "validators": [],
+            "help": "",
+            "translatable": true
+          },
+          "rightAlt": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "right element alt information",
+            "inputType": "Text",
+            "validators": [],
+            "help": "",
+            "translatable": true
+          }
+        }
+      }
     }
   }
 }

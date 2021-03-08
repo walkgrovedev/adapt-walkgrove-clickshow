@@ -1,12 +1,27 @@
 <div class="component__inner clickshow__inner">
   {{> component this}} 
 
-  {{!-- <div class="clickshow__main">
+  <div class="clickshow__main">
   {{#each _items}}
-
+    <div class="clickshow__widget" data-index="{{@index}}">
+      <div class="clickshow__item left js-clickshow-item">
+        {{#if_eq ../_layoutType "image"}}
+        <img src="{{left}}" aria-label="{{leftAlt}}" />
+        {{else}}
+        <div>{{left}}</div>
+        {{/if_eq}}
+      </div>
+       <div class="clickshow__item right">
+        {{#if_eq ../_layoutType "image"}}
+        <img src="{{right}}" aria-label="{{rightAlt}}" />
+        {{else}}
+        <div>{{right}}</div>
+        {{/if_eq}}
+      </div>
+    </div>
   {{/each}}
   </div> 
   
-  {{#if body}} {{/if}} --}}
+  {{!--  --}}
 
 </div>
