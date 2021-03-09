@@ -36,7 +36,7 @@
       "default": "image",
       "inputType": "Text",
       "validators": [],
-      "help": "This is the layout setting - usingf images or text",
+      "help": "This is the layout setting - using images or text",
       "translatable": false
     },
     "_items": {
