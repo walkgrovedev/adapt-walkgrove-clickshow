@@ -8,14 +8,14 @@
         {{#if_eq ../_layoutType "image"}}
         <img src="{{left}}" aria-label="{{leftAlt}}" />
         {{else}}
-        <div>{{left}}</div>
+        <div class="text">{{left}}</div>
         {{/if_eq}}
       </div>
        <div class="clickshow__item right">
         {{#if_eq ../_layoutType "image"}}
         <img src="{{right}}" aria-label="{{rightAlt}}" />
         {{else}}
-        <div>{{right}}</div>
+        <div class="text">{{right}}</div>
         {{/if_eq}}
       </div>
     </div>

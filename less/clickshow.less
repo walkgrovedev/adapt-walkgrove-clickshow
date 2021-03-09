@@ -30,9 +30,15 @@
     }
 
     .clickshow__item {
+
         &.left {
             margin-right: 1rem;
             cursor: pointer;
+
+            .text {
+                color: @item-color;
+                font-weight: bold;
+            }
         }
         &.right {
             opacity: 0; 
