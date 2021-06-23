@@ -42,6 +42,16 @@ define([
 
       const itemIndex = $(event.currentTarget).parent().data('index');
       this.setItemVisited(itemIndex);
+      //audio?
+      if (Adapt.config.get('_sound')._isActive === true) {
+        this.model.get('_items').forEach((item, index) => {
+          if (index === itemIndex) {
+            if (item._audio) {
+              Adapt.trigger('audio:partial', {src: item._audio._src});
+            }
+          }
+        });
+      }
 
     },
 
