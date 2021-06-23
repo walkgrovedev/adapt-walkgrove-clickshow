@@ -7,14 +7,28 @@
       <div class="clickshow__item left js-clickshow-item">
         {{#if_eq ../_layoutType "image"}}
         <img src="{{left}}" aria-label="{{leftAlt}}" />
-        {{else}}
+        {{/if_eq}}
+        {{#if_eq ../_layoutType "image-text"}}
+        <img src="{{left}}" aria-label="{{leftAlt}}" />
+        {{/if_eq}}
+        {{#if_eq ../_layoutType "text"}}
+        <div class="text">{{left}}</div>
+        {{/if_eq}}
+        {{#if_eq ../_layoutType "text-image"}}
         <div class="text">{{left}}</div>
         {{/if_eq}}
       </div>
        <div class="clickshow__item right">
         {{#if_eq ../_layoutType "image"}}
         <img src="{{right}}" aria-label="{{rightAlt}}" />
-        {{else}}
+        {{/if_eq}}
+        {{#if_eq ../_layoutType "text-image"}}
+        <img src="{{right}}" aria-label="{{rightAlt}}" />
+        {{/if_eq}}
+        {{#if_eq ../_layoutType "text"}}
+        <div class="text">{{right}}</div>
+        {{/if_eq}}
+        {{#if_eq ../_layoutType "image-text"}}
         <div class="text">{{right}}</div>
         {{/if_eq}}
       </div>
